@@ -1,0 +1,11 @@
+{
+  "staff": [
+    { "name": "Ramesh Kumar", "role": "Nurse", "shift": "Morning", "status": "Present", "department": "General Ward" },
+    { "name": "Sita Devi", "role": "Cleaner", "shift": "Evening", "status": "Present", "department": "ICU" },
+    { "name": "Arjun Patel", "role": "Receptionist", "shift": "Night", "status": "Absent", "department": "Front Desk" },
+    { "name": "Vikram Das", "role": "Lab Technician", "shift": "Morning", "status": "Present", "department": "Pathology" },
+    { "name": "Anita Sharma", "role": "Pharmacist", "shift": "Evening", "status": "Present", "department": "Pharmacy" },
+    { "name": "Rahul Verma", "role": "Security Guard", "shift": "Night", "status": "Present", "department": "Main Gate" }
+   
+  ]
+}

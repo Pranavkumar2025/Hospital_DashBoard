@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Paracetamol",
+    "category": "Pain Reliever / Fever Reducer",
+    "stock": 120,
+    "expiry": "2026-05-10",
+    "manufacturer": "Cipla Ltd.",
+    "batchNumber": "PCM2024A",
+    "price": 25
+  },
+  {
+    "name": "Amoxicillin",
+    "category": "Antibiotic",
+    "stock": 80,
+    "expiry": "2025-12-20",
+    "manufacturer": "Sun Pharma",
+    "batchNumber": "AMX2024B",
+    "price": 55
+  },
+  {
+    "name": "Cough Syrup",
+    "category": "Cough & Cold",
+    "stock": 50,
+    "expiry": "2024-09-15",
+    "manufacturer": "Mankind Pharma",
+    "batchNumber": "CS2024C",
+    "price": 60
+  },
+  {
+    "name": "Insulin",
+    "category": "Diabetes Care",
+    "stock": 30,
+    "expiry": "2025-06-01",
+    "manufacturer": "Biocon Ltd.",
+    "batchNumber": "INS2024D",
+    "price": 450
+  },
+  {
+    "name": "Aspirin",
+    "category": "Pain Reliever / Blood Thinner",
+    "stock": 100,
+    "expiry": "2027-02-18",
+    "manufacturer": "Dr. Reddy's Laboratories",
+    "batchNumber": "ASP2024E",
+    "price": 40
+  },
+  {
+    "name": "Cetirizine",
+    "category": "Anti-Allergic",
+    "stock": 150,
+    "expiry": "2026-11-25",
+    "manufacturer": "Glenmark Pharmaceuticals",
+    "batchNumber": "CTR2024F",
+    "price": 20
+  }
+]

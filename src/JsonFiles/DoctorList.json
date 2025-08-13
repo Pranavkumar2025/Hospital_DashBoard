@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Dr. Anil Sharma",
+    "specialization": "Cardiologist",
+    "qualification": "MBBS, MD",
+    "experience_years": 15,
+    "present": true,
+    "status": "On Duty",
+    "available_time": "10:00 AM - 2:00 PM",
+    "room_number": "201"
+  },
+  {
+    "name": "Dr. Meera Joshi",
+    "specialization": "Pediatrician",
+    "qualification": "MBBS, DCH",
+    "experience_years": 10,
+    "present": false,
+    "status": "On Leave",
+    "available_time": "—",
+    "room_number": "105"
+  },
+  {
+    "name": "Ramesh Kumar",
+    "specialization": "Nurse",
+    "qualification": "B.Sc Nursing",
+    "experience_years": 8,
+    "present": true,
+    "status": "On Duty",
+    "available_time": "8:00 AM - 4:00 PM",
+    "room_number": "Ward 3"
+  },
+  {
+    "name": "Sita Devi",
+    "specialization": "Cleaner",
+    "qualification": "Housekeeping Certification",
+    "experience_years": 12,
+    "present": true,
+    "status": "On Duty",
+    "available_time": "2:00 PM - 10:00 PM",
+    "room_number": "All Floors"
+  },
+  {
+    "name": "Arjun Patel",
+    "specialization": "Receptionist",
+    "qualification": "Diploma in Hospitality",
+    "experience_years": 6,
+    "present": false,
+    "status": "Night Shift",
+    "available_time": "10:00 PM - 6:00 AM",
+    "room_number": "Front Desk"
+  }
+
+]
