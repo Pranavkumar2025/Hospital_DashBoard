@@ -48,6 +48,17 @@
     "status": "Night Shift",
     "available_time": "10:00 PM - 6:00 AM",
     "room_number": "Front Desk"
+  },
+  {
+    "name": "Vikram Das",
+    "specialization": "Lab Technician",
+    "qualification": "B.Sc Medical Technology",
+    "experience_years": 5,
+    "present": true,
+    "status": "On Duty",
+    "available_time": "9:00 AM - 5:00 PM",
+    "room_number": "Lab 2"
   }
+
 
 ]

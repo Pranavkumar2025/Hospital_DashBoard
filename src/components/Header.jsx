@@ -9,20 +9,22 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="w-full bg-gradient-to-r from-blue-700 to-blue-500 p-5 flex justify-between items-center shadow-lg border-b-4 border-blue-300">
+    <header className="w-full bg-gradient-to-r from-blue-700 to-blue-500 px-16 py-10 flex justify-between items-center shadow-2xl border-b-8 border-blue-300">
       {/* Left Side - Logo & Name */}
-      <div className="flex items-center gap-4">
-        <div className="bg-white p-2 rounded-full shadow-md">
-          <span role="img" aria-label="hospital" className="text-4xl">🏥</span>
+      <div className="flex items-center gap-8">
+        <div className="bg-white p-6 rounded-full shadow-lg">
+          <span role="img" aria-label="hospital" className="text-8xl">🏥</span>
         </div>
-        <h1 className="text-white font-extrabold text-3xl tracking-wide drop-shadow-lg">
+        <h1 className="text-white font-extrabold text-7xl tracking-widest drop-shadow-xl">
           City Hospital Dashboard
         </h1>
       </div>
 
       {/* Right Side - Time */}
-      <div className="bg-white px-6 py-2 rounded-lg shadow-md border-2 border-blue-200">
-        <span className="text-blue-800 font-bold text-2xl">{time}</span>
+      <div className="bg-white px-12 py-6 rounded-2xl shadow-lg border-4 border-blue-200">
+        <span className="text-blue-800 font-extrabold text-6xl tracking-wide">
+          {time}
+        </span>
       </div>
     </header>
   );
