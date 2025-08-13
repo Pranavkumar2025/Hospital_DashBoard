@@ -103,21 +103,8 @@
   { "name": "Nebivolol", "stock": 100 },
   { "name": "Sotalol", "stock": 65 },
   { "name": "Timolol", "stock": 50 },
-  { "name": "Propranolol Extended Release", "stock": 40 },
+  { "name": "Propranolol Extended Release", "stock": 40 }
 
-  { "name": "Nadolol", "stock": 30 },
-  { "name": "Pindolol", "stock": 120 },
-  { "name": "Acebutolol", "stock": 85 },
-  { "name": "Labetalol", "stock": 75 },
-  { "name": "Doxazosin", "stock": 60 },
-  { "name": "Terazosin", "stock": 55 },
-  { "name": "Alfuzosin", "stock": 45 },
-  { "name": "Silodosin", "stock": 90 },
-  { "name": "Tamsulosin Extended Release", "stock": 80 },
-  { "name": "Phenoxybenzamine", "stock": 100 },
-  { "name": "Phentolamine", "stock": 65 },
-  { "name": "Moxonidine", "stock": 50 },
-  { "name": "Rilmenidine", "stock": 40 },
-  { "name": "Clonidine Extended Release", "stock": 30 }
+
 
 ]
