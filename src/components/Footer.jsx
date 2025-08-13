@@ -8,13 +8,13 @@ export default function Footer() {
         {/* Left Section */}
         <div className="flex items-center space-x-4">
           <span className="text-yellow-400 text-4xl">🏥</span>
-          <span className="font-bold tracking-wide">City Hospital</span>
+          <span className="font-bold tracking-wide">Munger Hospital</span>
         </div>
 
         {/* Middle Section */}
         <div className="text-center mt-4 md:mt-0">
           <p className="text-lg md:text-xl text-gray-400">
-            © {new Date().getFullYear()} City Hospital. All Rights Reserved.
+            © {new Date().getFullYear()} Munger Hospital. All Rights Reserved.
           </p>
         </div>
 

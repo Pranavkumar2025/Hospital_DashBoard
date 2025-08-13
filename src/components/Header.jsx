@@ -16,7 +16,7 @@ export default function Header() {
           <span role="img" aria-label="hospital" className="text-8xl">🏥</span>
         </div>
         <h1 className="text-white font-extrabold text-7xl tracking-widest drop-shadow-xl">
-          City Hospital Dashboard
+          Munger Hospital Dashboard
         </h1>
       </div>
 
