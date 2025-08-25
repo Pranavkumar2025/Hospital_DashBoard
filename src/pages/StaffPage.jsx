@@ -13,7 +13,6 @@ export default function StaffPage() {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      // Checks if screen width >= 3800px (roughly 4K)
       if (window.innerWidth >= 3800) {
         setIs4K(true);
       } else {
@@ -29,22 +28,56 @@ export default function StaffPage() {
   return (
     <div
       className={`${
-        is4K ? "p-16" : "p-6"
-      } bg-gradient-to-b from-green-50 to-white min-h-screen flex flex-col items-center`}
+        is4K ? "p-20" : "p-6 md:p-8 lg:p-12"
+      } min-h-screen flex flex-col items-center relative bg-gradient-to-b from-gray-100 to-teal-100/50`}
     >
-      {/* Header */}
+      {/* Layer 1: Glassmorphism background */}
       <div
-        className={`text-center ${is4K ? "mb-20" : "mb-8"} max-w-[1800px]`}
+        className="absolute inset-0 bg-white/30 backdrop-blur-lg z-0"
+        style={{ backgroundImage: "radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.5), rgba(0, 128, 128, 0.2))" }}
+      />
+
+      {/* Layer 2: SVG medical pattern */}
+      <svg
+        className="absolute inset-0 w-full h-full opacity-[0.06] pointer-events-none z-0"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <pattern
+            id="staff-pattern"
+            patternUnits="userSpaceOnUse"
+            width="80"
+            height="80"
+          >
+            <g fill="none" stroke="currentColor" strokeWidth="1" strokeOpacity="0.6">
+              {/* Stethoscope */}
+              <path d="M20 30a10 10 0 0110 10c0 5-4 10-10 10s-10-5-10-10a10 10 0 0110-10m0 0v20m-5-10h10" />
+              {/* Clipboard */}
+              <rect x="40" y="20" width="20" height="30" rx="5" ry="5" stroke="currentColor" />
+              <path d="M45 20v-5h10v5" />
+              {/* Heart */}
+              <path d="M30 60c-3-5-10-5-10 0s3 10 10 10 10-5 10-10-7-5-10 0z" />
+            </g>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#staff-pattern)" />
+      </svg>
+
+      {/* Content wrapper */}
+      <div
+        className={`relative z-10 text-center ${
+          is4K ? "mb-20 max-w-[1800px]" : "mb-10 max-w-[1400px]"
+        }`}
       >
         <h1
-          className={`font-extrabold text-green-900 leading-tight flex items-center justify-center ${
+          className={`font-bold text-teal-600 leading-tight flex items-center justify-center ${
             is4K
               ? "text-[5rem] 2xl:text-[6.5rem]"
-              : "text-2xl md:text-3xl"
+              : "text-2xl md:text-3xl lg:text-[2.5rem]"
           }`}
         >
           <FaUserTie
-            className={`mr-3 text-green-600 align-middle ${
+            className={`mr-3 text-coral-500 align-middle ${
               is4K
                 ? "text-[4rem] 2xl:text-[5rem] mr-6"
                 : "text-xl md:text-2xl"
@@ -53,10 +86,10 @@ export default function StaffPage() {
           Staff Information
         </h1>
         <p
-          className={`text-gray-700 ${
+          className={`text-gray-700 font-medium ${
             is4K
               ? "mt-8 text-[2.5rem] 2xl:text-[3rem]"
-              : "mt-2 text-sm md:text-base"
+              : "mt-3 text-sm md:text-base"
           }`}
         >
           Overview of hospital staff members and current status
@@ -65,7 +98,7 @@ export default function StaffPage() {
           className={`text-gray-500 ${
             is4K
               ? "text-[2rem] 2xl:text-[2.2rem] mt-4"
-              : "text-xs md:text-sm mt-1"
+              : "text-xs md:text-sm mt-2"
           }`}
         >
           Last Updated: {new Date().toLocaleDateString()}
@@ -74,69 +107,73 @@ export default function StaffPage() {
 
       {/* Table */}
       <div
-        className={`overflow-x-auto ${
+        className={`relative z-10 overflow-x-auto ${
           is4K
-            ? "shadow-2xl rounded-3xl w-full max-w-[95%] 4xl:max-w-[85%]"
+            ? "shadow-xl rounded-3xl w-full max-w-[95%] 4xl:max-w-[85%]"
             : "shadow-lg rounded-xl w-full max-w-[95%]"
-        }`}
+        } bg-white/60 backdrop-blur-md border border-teal-300/50`}
       >
         <table className="w-full border-collapse">
           <thead
-            className={`bg-green-700 text-white ${
-              is4K ? "text-[2.4rem] 2xl:text-[2.8rem]" : "text-xs md:text-sm"
-            }`}
+            className={`bg-gray-900 text-teal-100 font-extrabold ${
+              is4K ? "text-[2.4rem] 2xl:text-[2.8rem]" : "text-sm md:text-base"
+            } uppercase shadow-lg border-b border-teal-300/50`}
           >
             <tr>
               <th
-                className={`font-semibold text-left ${
-                  is4K ? "p-10" : "p-3"
-                }`}
+                className={`text-left ${is4K ? "p-10" : "p-3 md:p-4"}`}
               >
                 <FaUserTie
-                  className={`inline-block mr-2 align-middle ${
+                  className={`inline-block mr-2 align-middle text-coral-400 ${
                     is4K ? "text-[2rem] mr-4" : "text-base"
                   }`}
-                />{" "}
+                />
                 Name
               </th>
-              <th className={`${is4K ? "p-10" : "p-3"} text-left font-semibold`}>
+              <th
+                className={`text-left ${is4K ? "p-10" : "p-3 md:p-4"}`}
+              >
                 <FaUserTag
-                  className={`inline-block mr-2 align-middle ${
+                  className={`inline-block mr-2 align-middle text-coral-400 ${
                     is4K ? "text-[2rem] mr-4" : "text-base"
                   }`}
-                />{" "}
+                />
                 Role
               </th>
-              <th className={`${is4K ? "p-10" : "p-3"} text-left font-semibold`}>
+              <th
+                className={`text-left ${is4K ? "p-10" : "p-3 md:p-4"}`}
+              >
                 <FaBuilding
-                  className={`inline-block mr-2 align-middle ${
+                  className={`inline-block mr-2 align-middle text-coral-400 ${
                     is4K ? "text-[2rem] mr-4" : "text-base"
                   }`}
-                />{" "}
+                />
                 Department
               </th>
-              <th className={`${is4K ? "p-10" : "p-3"} text-left font-semibold`}>
+              <th
+                className={`text-left ${is4K ? "p-10" : "p-3 md:p-4"}`}
+              >
                 <FaClock
-                  className={`inline-block mr-2 align-middle ${
+                  className={`inline-block mr-2 align-middle text-coral-400 ${
                     is4K ? "text-[2rem] mr-4" : "text-base"
                   }`}
-                />{" "}
+                />
                 Shift
               </th>
               <th
-                className={`${is4K ? "p-10" : "p-3"} text-center font-semibold`}
+                className={`text-center ${is4K ? "p-10" : "p-3 md:p-4"}`}
               >
                 <FaUserCheck
-                  className={`inline-block mr-2 align-middle ${
+                  className={`inline-block mr-2 align-middle text-coral-400 ${
                     is4K ? "text-[2rem] mr-4" : "text-base"
                   }`}
-                />{" "}
+                />
                 Status
               </th>
             </tr>
           </thead>
           <tbody
-            className={`text-gray-900 ${
+            className={`text-gray-800 ${
               is4K
                 ? "text-[2.2rem] 2xl:text-[2.5rem]"
                 : "text-xs md:text-sm"
@@ -146,42 +183,52 @@ export default function StaffPage() {
               <tr
                 key={index}
                 className={`${
-                  index % 2 === 0 ? "bg-white" : "bg-green-50"
-                } hover:bg-green-100 transition duration-300`}
+                  index % 2 === 0 ? "bg-white/70" : "bg-teal-50/30"
+                } hover:bg-coral-100/30 transition-all duration-300 ease-in-out transform hover:scale-[1.005]`}
               >
                 <td
-                  className={`${is4K ? "p-10" : "p-3"} border-b border-gray-300`}
+                  className={`${
+                    is4K ? "p-10" : "p-3 md:p-4"
+                  } border-b border-teal-300/50`}
                 >
                   {member.name}
                 </td>
                 <td
-                  className={`${is4K ? "p-10" : "p-3"} border-b border-gray-300`}
+                  className={`${
+                    is4K ? "p-10" : "p-3 md:p-4"
+                  } border-b border-teal-300/50`}
                 >
                   {member.role}
                 </td>
                 <td
-                  className={`${is4K ? "p-10" : "p-3"} border-b border-gray-300`}
+                  className={`${
+                    is4K ? "p-10" : "p-3 md:p-4"
+                  } border-b border-teal-300/50`}
                 >
                   {member.department}
                 </td>
                 <td
-                  className={`${is4K ? "p-10" : "p-3"} border-b border-gray-300`}
+                  className={`${
+                    is4K ? "p-10" : "p-3 md:p-4"
+                  } border-b border-teal-300/50`}
                 >
                   {member.shift}
                 </td>
                 <td
-                  className={`${is4K ? "p-10" : "p-3"} text-center border-b border-gray-300`}
+                  className={`${
+                    is4K ? "p-10" : "p-3 md:p-4"
+                  } text-center border-b border-teal-300/50`}
                 >
                   <span
-                    className={`rounded-full font-bold shadow ${
+                    className={`rounded-full font-semibold shadow border ${
                       is4K
-                        ? "px-8 py-4 shadow-lg"
+                        ? "px-8 py-4 shadow-lg text-[1.8rem]"
                         : "px-3 py-1 shadow-sm text-[0.7rem] md:text-xs"
                     } ${
                       member.status === "Present"
-                        ? "bg-green-100 text-green-800 border border-green-300"
-                        : "bg-red-100 text-red-800 border border-red-300"
-                    }`}
+                        ? "bg-green-100/80 text-green-700 border-green-300/50 shadow-[0_0_8px_rgba(34,197,94,0.3)]"
+                        : "bg-red-100/80 text-red-700 border-red-300/50 shadow-[0_0_8px_rgba(239,68,68,0.3)]"
+                    } transition-all duration-300`}
                   >
                     {member.status}
                   </span>
