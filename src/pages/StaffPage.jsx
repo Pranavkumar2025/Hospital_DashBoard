@@ -29,17 +29,17 @@ export default function StaffPage() {
     <div
       className={`${
         is4K ? "p-20" : "p-6 md:p-8 lg:p-12"
-      } min-h-screen flex flex-col items-center relative bg-gradient-to-b from-gray-100 to-teal-100/50`}
+      } min-h-screen flex flex-col items-center relative bg-gray-800 text-gray-200`}
     >
       {/* Layer 1: Glassmorphism background */}
       <div
-        className="absolute inset-0 bg-white/30 backdrop-blur-lg z-0"
-        style={{ backgroundImage: "radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.5), rgba(0, 128, 128, 0.2))" }}
+        className="absolute inset-0 bg-white/20 backdrop-blur-md z-0"
+        style={{ backgroundImage: "radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1), rgba(0, 128, 128, 0.05))" }}
       />
 
       {/* Layer 2: SVG medical pattern */}
       <svg
-        className="absolute inset-0 w-full h-full opacity-[0.06] pointer-events-none z-0"
+        className="absolute inset-0 w-full h-full opacity-[0.04] pointer-events-none z-0"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
@@ -49,11 +49,11 @@ export default function StaffPage() {
             width="80"
             height="80"
           >
-            <g fill="none" stroke="currentColor" strokeWidth="1" strokeOpacity="0.6">
+            <g fill="none" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1">
               {/* Stethoscope */}
               <path d="M20 30a10 10 0 0110 10c0 5-4 10-10 10s-10-5-10-10a10 10 0 0110-10m0 0v20m-5-10h10" />
               {/* Clipboard */}
-              <rect x="40" y="20" width="20" height="30" rx="5" ry="5" stroke="currentColor" />
+              <rect x="40" y="20" width="20" height="30" rx="5" ry="5" />
               <path d="M45 20v-5h10v5" />
               {/* Heart */}
               <path d="M30 60c-3-5-10-5-10 0s3 10 10 10 10-5 10-10-7-5-10 0z" />
@@ -70,14 +70,14 @@ export default function StaffPage() {
         }`}
       >
         <h1
-          className={`font-bold text-teal-600 leading-tight flex items-center justify-center ${
+          className={`font-bold text-yellow-500 leading-tight flex items-center justify-center ${
             is4K
               ? "text-[5rem] 2xl:text-[6.5rem]"
               : "text-2xl md:text-3xl lg:text-[2.5rem]"
           }`}
         >
           <FaUserTie
-            className={`mr-3 text-coral-500 align-middle ${
+            className={`mr-3 text-yellow-600 align-middle ${
               is4K
                 ? "text-[4rem] 2xl:text-[5rem] mr-6"
                 : "text-xl md:text-2xl"
@@ -86,7 +86,7 @@ export default function StaffPage() {
           Staff Information
         </h1>
         <p
-          className={`text-gray-700 font-medium ${
+          className={`text-gray-300 font-medium ${
             is4K
               ? "mt-8 text-[2.5rem] 2xl:text-[3rem]"
               : "mt-3 text-sm md:text-base"
@@ -95,7 +95,7 @@ export default function StaffPage() {
           Overview of hospital staff members and current status
         </p>
         <p
-          className={`text-gray-500 ${
+          className={`text-gray-400 ${
             is4K
               ? "text-[2rem] 2xl:text-[2.2rem] mt-4"
               : "text-xs md:text-sm mt-2"
@@ -111,20 +111,20 @@ export default function StaffPage() {
           is4K
             ? "shadow-xl rounded-3xl w-full max-w-[95%] 4xl:max-w-[85%]"
             : "shadow-lg rounded-xl w-full max-w-[95%]"
-        } bg-white/60 backdrop-blur-md border border-teal-300/50`}
+        } bg-gray-800/70 backdrop-blur-md border border-blue-300/30`}
       >
         <table className="w-full border-collapse">
           <thead
-            className={`bg-gray-900 text-teal-100 font-extrabold ${
+            className={`bg-yellow-400 text-gray-900 font-extrabold ${
               is4K ? "text-[2.4rem] 2xl:text-[2.8rem]" : "text-sm md:text-base"
-            } uppercase shadow-lg border-b border-teal-300/50`}
+            } uppercase shadow-lg border-b border-blue-300/30`}
           >
             <tr>
               <th
                 className={`text-left ${is4K ? "p-10" : "p-3 md:p-4"}`}
               >
                 <FaUserTie
-                  className={`inline-block mr-2 align-middle text-coral-400 ${
+                  className={`inline-block mr-2 align-middle text-blue-600 ${
                     is4K ? "text-[2rem] mr-4" : "text-base"
                   }`}
                 />
@@ -134,7 +134,7 @@ export default function StaffPage() {
                 className={`text-left ${is4K ? "p-10" : "p-3 md:p-4"}`}
               >
                 <FaUserTag
-                  className={`inline-block mr-2 align-middle text-coral-400 ${
+                  className={`inline-block mr-2 align-middle text-blue-600 ${
                     is4K ? "text-[2rem] mr-4" : "text-base"
                   }`}
                 />
@@ -144,7 +144,7 @@ export default function StaffPage() {
                 className={`text-left ${is4K ? "p-10" : "p-3 md:p-4"}`}
               >
                 <FaBuilding
-                  className={`inline-block mr-2 align-middle text-coral-400 ${
+                  className={`inline-block mr-2 align-middle text-blue-600 ${
                     is4K ? "text-[2rem] mr-4" : "text-base"
                   }`}
                 />
@@ -154,7 +154,7 @@ export default function StaffPage() {
                 className={`text-left ${is4K ? "p-10" : "p-3 md:p-4"}`}
               >
                 <FaClock
-                  className={`inline-block mr-2 align-middle text-coral-400 ${
+                  className={`inline-block mr-2 align-middle text-blue-600 ${
                     is4K ? "text-[2rem] mr-4" : "text-base"
                   }`}
                 />
@@ -164,7 +164,7 @@ export default function StaffPage() {
                 className={`text-center ${is4K ? "p-10" : "p-3 md:p-4"}`}
               >
                 <FaUserCheck
-                  className={`inline-block mr-2 align-middle text-coral-400 ${
+                  className={`inline-block mr-2 align-middle text-blue-600 ${
                     is4K ? "text-[2rem] mr-4" : "text-base"
                   }`}
                 />
@@ -173,7 +173,7 @@ export default function StaffPage() {
             </tr>
           </thead>
           <tbody
-            className={`text-gray-800 ${
+            className={`text-gray-200 ${
               is4K
                 ? "text-[2.2rem] 2xl:text-[2.5rem]"
                 : "text-xs md:text-sm"
@@ -183,41 +183,41 @@ export default function StaffPage() {
               <tr
                 key={index}
                 className={`${
-                  index % 2 === 0 ? "bg-white/70" : "bg-teal-50/30"
-                } hover:bg-coral-100/30 transition-all duration-300 ease-in-out transform hover:scale-[1.005]`}
+                  index % 2 === 0 ? "bg-gray-700/70" : "bg-gray-800/70"
+                } hover:bg-blue-900/50 transition-all duration-300 ease-in-out transform hover:scale-[1.005]`}
               >
                 <td
                   className={`${
                     is4K ? "p-10" : "p-3 md:p-4"
-                  } border-b border-teal-300/50`}
+                  } border-b border-blue-300/30`}
                 >
                   {member.name}
                 </td>
                 <td
                   className={`${
                     is4K ? "p-10" : "p-3 md:p-4"
-                  } border-b border-teal-300/50`}
+                  } border-b border-blue-300/30`}
                 >
                   {member.role}
                 </td>
                 <td
                   className={`${
                     is4K ? "p-10" : "p-3 md:p-4"
-                  } border-b border-teal-300/50`}
+                  } border-b border-blue-300/30`}
                 >
                   {member.department}
                 </td>
                 <td
                   className={`${
                     is4K ? "p-10" : "p-3 md:p-4"
-                  } border-b border-teal-300/50`}
+                  } border-b border-blue-300/30`}
                 >
                   {member.shift}
                 </td>
                 <td
                   className={`${
                     is4K ? "p-10" : "p-3 md:p-4"
-                  } text-center border-b border-teal-300/50`}
+                  } text-center border-b border-blue-300/30`}
                 >
                   <span
                     className={`rounded-full font-semibold shadow border ${
@@ -226,8 +226,8 @@ export default function StaffPage() {
                         : "px-3 py-1 shadow-sm text-[0.7rem] md:text-xs"
                     } ${
                       member.status === "Present"
-                        ? "bg-green-100/80 text-green-700 border-green-300/50 shadow-[0_0_8px_rgba(34,197,94,0.3)]"
-                        : "bg-red-100/80 text-red-700 border-red-300/50 shadow-[0_0_8px_rgba(239,68,68,0.3)]"
+                        ? "bg-green-600 text-white border-green-700 shadow-[0_0_8px_rgba(34,197,94,0.3)]"
+                        : "bg-red-600 text-white border-red-700 shadow-[0_0_8px_rgba(239,68,68,0.3)]"
                     } transition-all duration-300`}
                   >
                     {member.status}

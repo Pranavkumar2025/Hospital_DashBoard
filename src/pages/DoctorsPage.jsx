@@ -22,72 +22,72 @@ export default function DoctorsPage() {
 
   return is4K ? (
     // ----------- 4K VERSION -----------
-    <div className="p-20 min-h-screen flex flex-col items-center bg-gradient-to-b from-blue-50 via-white to-blue-50 text-gray-800">
+    <div className="p-20 min-h-screen flex flex-col items-center bg-gray-900 text-gray-200">
       <div className="text-center mb-16 max-w-[1800px]">
-        <h1 className="text-[5rem] 2xl:text-[6rem] font-bold leading-tight text-blue-700 flex items-center justify-center">
-          <FaUserMd className="mr-6 text-blue-600 text-[4rem] 2xl:text-[5rem]" />
+        <h1 className="text-[5rem] 2xl:text-[6rem] font-bold leading-tight text-blue-500 flex items-center justify-center">
+          <FaUserMd className="mr-6 text-blue-400 text-[4rem] 2xl:text-[5rem]" />
           Doctors Directory
         </h1>
-        <p className="mt-6 text-[2.5rem] 2xl:text-[3rem] text-gray-600 font-medium">
+        <p className="mt-6 text-[2.5rem] 2xl:text-[3rem] text-gray-300 font-medium">
           Meet our qualified and experienced medical professionals
         </p>
-        <p className="mt-2 text-[2rem] 2xl:text-[2.2rem] text-gray-500">
+        <p className="mt-2 text-[2rem] 2xl:text-[2.2rem] text-gray-400">
           Last Updated: {new Date().toLocaleDateString()}
         </p>
       </div>
 
-      <div className="w-full max-w-[95%] 4xl:max-w-[85%] shadow-xl rounded-2xl bg-white border border-gray-200 overflow-hidden">
+      <div className="w-full max-w-[95%] 4xl:max-w-[85%] shadow-xl rounded-2xl bg-gray-800 border border-gray-700 overflow-hidden">
         <table className="w-full border-collapse">
-          <thead className="bg-blue-600 text-white text-[2.4rem] 2xl:text-[2.8rem] uppercase">
+          <thead className="bg-yellow-400 text-gray-900 text-[2.4rem] 2xl:text-[2.8rem] uppercase">
             <tr>
               <th className="p-8 text-left font-medium">
-                <FaUserMd className="inline-block mr-4 align-middle text-blue-200 text-[2rem]" /> Name
+                <FaUserMd className="inline-block mr-4 align-middle text-blue-600 text-[2rem]" /> Name
               </th>
               <th className="p-8 text-left font-medium">
-                <FaStethoscope className="inline-block mr-4 align-middle text-blue-200 text-[2rem]" /> Specialization
+                <FaStethoscope className="inline-block mr-4 align-middle text-blue-600 text-[2rem]" /> Specialization
               </th>
               <th className="p-8 text-left font-medium">
-                <FaGraduationCap className="inline-block mr-4 align-middle text-blue-200 text-[2rem]" /> Qualification
+                <FaGraduationCap className="inline-block mr-4 align-middle text-blue-600 text-[2rem]" /> Qualification
               </th>
               <th className="p-8 text-center font-medium">
-                <MdWork className="inline-block mr-4 align-middle text-blue-200 text-[2rem]" /> Experience
+                <MdWork className="inline-block mr-4 align-middle text-blue-600 text-[2rem]" /> Experience
               </th>
               <th className="p-8 text-center font-medium">
-                <MdEventAvailable className="inline-block mr-4 align-middle text-blue-200 text-[2rem]" /> Status
+                <MdEventAvailable className="inline-block mr-4 align-middle text-blue-600 text-[2rem]" /> Status
               </th>
               <th className="p-8 text-center font-medium">
-                <FaClock className="inline-block mr-4 align-middle text-blue-200 text-[2rem]" /> Available Time
+                <FaClock className="inline-block mr-4 align-middle text-blue-600 text-[2rem]" /> Available Time
               </th>
               <th className="p-8 text-center font-medium">
-                <FaDoorOpen className="inline-block mr-4 align-middle text-blue-200 text-[2rem]" /> Room No.
+                <FaDoorOpen className="inline-block mr-4 align-middle text-blue-600 text-[2rem]" /> Room No.
               </th>
             </tr>
           </thead>
-          <tbody className="text-[2.2rem] 2xl:text-[2.5rem] text-gray-800">
+          <tbody className="text-[2.2rem] 2xl:text-[2.5rem] text-gray-200">
             {doctors.map((doc, index) => (
               <tr
                 key={index}
                 className={`${
-                  index % 2 === 0 ? "bg-white" : "bg-blue-50"
-                } hover:bg-blue-100 transition-all duration-300 ease-in-out transform hover:scale-[1.005]`}
+                  index % 2 === 0 ? "bg-gray-700" : "bg-gray-800"
+                } hover:bg-blue-900 transition-all duration-300 ease-in-out transform hover:scale-[1.005]`}
               >
-                <td className="p-8 border-b border-gray-200">{doc.name}</td>
-                <td className="p-8 border-b border-gray-200">{doc.specialization}</td>
-                <td className="p-8 border-b border-gray-200">{doc.qualification}</td>
-                <td className="p-8 text-center border-b border-gray-200">{doc.experience_years} yrs</td>
-                <td className="p-8 text-center border-b border-gray-200">
+                <td className="p-8 border-b border-gray-600">{doc.name}</td>
+                <td className="p-8 border-b border-gray-600">{doc.specialization}</td>
+                <td className="p-8 border-b border-gray-600">{doc.qualification}</td>
+                <td className="p-8 text-center border-b border-gray-600">{doc.experience_years} yrs</td>
+                <td className="p-8 text-center border-b border-gray-600">
                   <span
                     className={`px-8 py-3 rounded-full font-semibold shadow-md border ${
                       doc.present
-                        ? "bg-green-100 text-green-800 border-green-300 shadow-[0_0_10px_rgba(34,197,94,0.2)]"
-                        : "bg-red-100 text-red-800 border-red-300 shadow-[0_0_10px_rgba(239,68,68,0.2)]"
+                        ? "bg-green-600 text-white border-green-700 shadow-[0_0_10px_rgba(34,197,94,0.3)]"
+                        : "bg-red-600 text-white border-red-700 shadow-[0_0_10px_rgba(239,68,68,0.3)]"
                     } transition-all duration-300`}
                   >
                     {doc.status}
                   </span>
                 </td>
-                <td className="p-8 text-center border-b border-gray-200">{doc.available_time}</td>
-                <td className="p-8 text-center border-b border-gray-200">{doc.room_number}</td>
+                <td className="p-8 text-center border-b border-gray-600">{doc.available_time}</td>
+                <td className="p-8 text-center border-b border-gray-600">{doc.room_number}</td>
               </tr>
             ))}
           </tbody>
@@ -96,72 +96,72 @@ export default function DoctorsPage() {
     </div>
   ) : (
     // ----------- LAPTOP VERSION -----------
-    <div className="p-6 md:p-8 lg:p-12 min-h-screen flex flex-col items-center bg-gradient-to-b from-blue-50 via-white to-blue-50 text-gray-800">
+    <div className="p-6 md:p-8 lg:p-12 min-h-screen flex flex-col items-center bg-gray-900 text-gray-200">
       <div className="text-center mb-10 max-w-[1400px]">
-        <h1 className="text-[1.8rem] md:text-[2.2rem] lg:text-[2.5rem] font-bold leading-tight text-blue-700 flex items-center justify-center">
-          <FaUserMd className="mr-2 text-blue-600 text-[1.4rem] md:text-[1.8rem]" />
+        <h1 className="text-[1.8rem] md:text-[2.2rem] lg:text-[2.5rem] font-bold leading-tight text-blue-500 flex items-center justify-center">
+          <FaUserMd className="mr-2 text-blue-400 text-[1.4rem] md:text-[1.8rem]" />
           Doctors Directory
         </h1>
-        <p className="mt-3 text-[1rem] md:text-[1.1rem] text-gray-600 font-medium">
+        <p className="mt-3 text-[1rem] md:text-[1.1rem] text-gray-300 font-medium">
           Meet our qualified and experienced medical professionals
         </p>
-        <p className="mt-2 text-[0.9rem] md:text-[1rem] text-gray-500">
+        <p className="mt-2 text-[0.9rem] md:text-[1rem] text-gray-400">
           Last Updated: {new Date().toLocaleDateString()}
         </p>
       </div>
 
-      <div className="w-full max-w-[95%] shadow-lg rounded-xl bg-white border border-gray-200 overflow-hidden">
+      <div className="w-full max-w-[95%] shadow-lg rounded-xl bg-gray-800 border border-gray-700 overflow-hidden">
         <table className="w-full border-collapse">
-          <thead className="bg-blue-600 text-white text-[0.9rem] md:text-[1rem] uppercase">
+          <thead className="bg-yellow-400 text-gray-900 text-[0.9rem] md:text-[1rem] uppercase">
             <tr>
               <th className="p-3 md:p-4 text-left font-medium">
-                <FaUserMd className="inline-block mr-1 align-middle text-blue-200" /> Name
+                <FaUserMd className="inline-block mr-1 align-middle text-blue-600" /> Name
               </th>
               <th className="p-3 md:p-4 text-left font-medium">
-                <FaStethoscope className="inline-block mr-1 align-middle text-blue-200" /> Specialization
+                <FaStethoscope className="inline-block mr-1 align-middle text-blue-600" /> Specialization
               </th>
               <th className="p-3 md:p-4 text-left font-medium">
-                <FaGraduationCap className="inline-block mr-1 align-middle text-blue-200" /> Qualification
+                <FaGraduationCap className="inline-block mr-1 align-middle text-blue-600" /> Qualification
               </th>
               <th className="p-3 md:p-4 text-center font-medium">
-                <MdWork className="inline-block mr-1 align-middle text-blue-200" /> Experience
+                <MdWork className="inline-block mr-1 align-middle text-blue-600" /> Experience
               </th>
               <th className="p-3 md:p-4 text-center font-medium">
-                <MdEventAvailable className="inline-block mr-1 align-middle text-blue-200" /> Status
+                <MdEventAvailable className="inline-block mr-1 align-middle text-blue-600" /> Status
               </th>
               <th className="p-3 md:p-4 text-center font-medium">
-                <FaClock className="inline-block mr-1 align-middle text-blue-200" /> Time
+                <FaClock className="inline-block mr-1 align-middle text-blue-600" /> Time
               </th>
               <th className="p-3 md:p-4 text-center font-medium">
-                <FaDoorOpen className="inline-block mr-1 align-middle text-blue-200" /> Room
+                <FaDoorOpen className="inline-block mr-1 align-middle text-blue-600" /> Room
               </th>
             </tr>
           </thead>
-          <tbody className="text-[0.9rem] md:text-[1rem] text-gray-800">
+          <tbody className="text-[0.9rem] md:text-[1rem] text-gray-200">
             {doctors.map((doc, index) => (
               <tr
                 key={index}
                 className={`${
-                  index % 2 === 0 ? "bg-white" : "bg-blue-50"
-                } hover:bg-blue-100 transition-all duration-300 ease-in-out transform hover:scale-[1.005]`}
+                  index % 2 === 0 ? "bg-gray-700" : "bg-gray-800"
+                } hover:bg-blue-900 transition-all duration-300 ease-in-out transform hover:scale-[1.005]`}
               >
-                <td className="p-3 md:p-4 border-b border-gray-200">{doc.name}</td>
-                <td className="p-3 md:p-4 border-b border-gray-200">{doc.specialization}</td>
-                <td className="p-3 md:p-4 border-b border-gray-200">{doc.qualification}</td>
-                <td className="p-3 md:p-4 text-center border-b border-gray-200">{doc.experience_years} yrs</td>
-                <td className="p-3 md:p-4 text-center border-b border-gray-200">
+                <td className="p-3 md:p-4 border-b border-gray-600">{doc.name}</td>
+                <td className="p-3 md:p-4 border-b border-gray-600">{doc.specialization}</td>
+                <td className="p-3 md:p-4 border-b border-gray-600">{doc.qualification}</td>
+                <td className="p-3 md:p-4 text-center border-b border-gray-600">{doc.experience_years} yrs</td>
+                <td className="p-3 md:p-4 text-center border-b border-gray-600">
                   <span
                     className={`px-3 py-1 rounded-full font-semibold shadow text-[0.85rem] border ${
                       doc.present
-                        ? "bg-green-100 text-green-800 border-green-300 shadow-[0_0_8px_rgba(34,197,94,0.2)]"
-                        : "bg-red-100 text-red-800 border-red-300 shadow-[0_0_8px_rgba(239,68,68,0.2)]"
+                        ? "bg-green-600 text-white border-green-700 shadow-[0_0_8px_rgba(34,197,94,0.3)]"
+                        : "bg-red-600 text-white border-red-700 shadow-[0_0_8px_rgba(239,68,68,0.3)]"
                     } transition-all duration-300`}
                   >
                     {doc.status}
                   </span>
                 </td>
-                <td className="p-3 md:p-4 text-center border-b border-gray-200">{doc.available_time}</td>
-                <td className="p-3 md:p-4 text-center border-b border-gray-200">{doc.room_number}</td>
+                <td className="p-3 md:p-4 text-center border-b border-gray-600">{doc.available_time}</td>
+                <td className="p-3 md:p-4 text-center border-b border-gray-600">{doc.room_number}</td>
               </tr>
             ))}
           </tbody>

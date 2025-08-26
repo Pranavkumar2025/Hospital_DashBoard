@@ -8,7 +8,7 @@ export default function MedicinePage({ currentSlide = 0 }) {
 
   useEffect(() => {
     const checkResolution = () => {
-      setIs4K(window.innerWidth === 3840 && window.innerHeight === 2160);
+      setIs4K(window.innerWidth >= 3840 && window.innerHeight >= 2160);
     };
     checkResolution();
     window.addEventListener("resize", checkResolution);
@@ -35,18 +35,18 @@ export default function MedicinePage({ currentSlide = 0 }) {
   return (
     <div
       className={`relative min-h-screen flex flex-col items-center ${
-        is4K ? "" : "p-3"
+        is4K ? "p-8" : "p-3"
       }`}
     >
-      {/* Layer 1: Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-50 via-white to-blue-50" />
+      {/* Layer 1: Glassmorphism background */}
+      <div
+        className="absolute inset-0 bg-white/20 backdrop-blur-md z-0"
+        style={{ backgroundImage: "radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1), rgba(128, 128, 128, 0.05))" }}
+      />
 
-      {/* Layer 2: Radial light effect */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.7),_transparent_70%)]" />
-
-      {/* Layer 3: SVG medical pattern */}
+      {/* Layer 2: SVG medical pattern */}
       <svg
-        className="absolute inset-0 w-full h-full opacity-[0.04] pointer-events-none"
+        className="absolute inset-0 w-full h-full opacity-[0.04] pointer-events-none z-0"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
@@ -56,10 +56,8 @@ export default function MedicinePage({ currentSlide = 0 }) {
             width="80"
             height="80"
           >
-            <g fill="none" stroke="currentColor" strokeWidth="1">
-              {/* Cross */}
+            <g fill="none" stroke="rgba(200, 200, 200, 0.3)" strokeWidth="1">
               <path d="M30 10h20v10h10v20h-10v10H30V40H20V20h10z" />
-              {/* Pill capsule */}
               <rect
                 x="5"
                 y="55"
@@ -69,7 +67,6 @@ export default function MedicinePage({ currentSlide = 0 }) {
                 ry="5"
                 stroke="currentColor"
               />
-              {/* Heartbeat line */}
               <polyline points="50,70 55,60 60,65 65,55 70,65 75,60" />
             </g>
           </pattern>
@@ -78,39 +75,39 @@ export default function MedicinePage({ currentSlide = 0 }) {
       </svg>
 
       {/* Content wrapper */}
-      <div className="relative z-10 w-full flex flex-col items-center">
+      <div className="relative z-10 w-full flex flex-col items-center max-w-[90vw]">
         {/* Header */}
         <div
-          className={`text-center ${
-            is4K ? "mb-10 max-w-[2200px]" : "mb-5 max-w-[1400px]"
-          }`}
+          className={`text-center ${is4K ? "mb-16" : "mb-5"} max-w-[2200px]`}
         >
           <h1
             className={`${
-              is4K ? "text-[4.5rem]" : "text-2xl md:text-3xl"
-            } font-extrabold text-blue-900 leading-tight`}
+              is4K ? "text-[6vw] leading-[1.2]" : "text-2xl md:text-3xl"
+            } font-extrabold text-yellow-500`}
           >
             <FaPills
               className={`${
-                is4K ? "mr-6 text-[3.8rem]" : "mr-2 text-xl md:text-2xl"
-              } inline-block text-teal-500 align-middle`}
+                is4K ? "mr-8 text-[5vw] align-middle" : "mr-2 text-xl md:text-2xl"
+              } inline-block text-yellow-400`}
             />
             Medicine Stock
           </h1>
           <p
             className={`${
-              is4K ? "text-[2rem] mt-3" : "text-sm md:text-base mt-1"
-            } text-gray-500`}
+              is4K ? "text-[3vw] mt-4" : "text-sm md:text-base mt-1"
+            } text-gray-300`}
           >
             Last Updated: {new Date().toLocaleDateString()}
           </p>
-          <p
-            className={`${
-              is4K ? "text-[1.8rem]" : "text-sm md:text-base"
-            } text-gray-700 mt-1`}
+          {/* Pagination below Last Updated */}
+          <div
+            className={`mt-4 ${
+              is4K ? "text-[2.5vw]" : "text-sm md:text-base"
+            } bg-gray-700 text-gray-200 px-6 py-2 rounded-lg shadow-md`}
           >
-            Page {currentSlide + 1} of {slides.length}
-          </p>
+            <span className="font-semibold">Page Navigation:</span> Page{" "}
+            {currentSlide + 1} of {slides.length}
+          </div>
         </div>
 
         {/* Slide content */}
@@ -124,7 +121,7 @@ export default function MedicinePage({ currentSlide = 0 }) {
               transition={{ duration: is4K ? 0.6 : 0.4, ease: "easeInOut" }}
               className={`${
                 is4K
-                  ? "grid grid-cols-3 gap-30 max-w-[90%]"
+                  ? "grid grid-cols-3 gap-[4vw] max-w-[85vw]"
                   : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[95%]"
               }`}
             >
@@ -132,65 +129,63 @@ export default function MedicinePage({ currentSlide = 0 }) {
                 <div
                   key={colIndex}
                   className={`${
-                    is4K ? "rounded-3xl shadow-md" : "rounded-xl shadow-sm"
-                  } bg-white border border-blue-100 overflow-hidden`}
+                    is4K ? "rounded-[2vw] shadow-lg" : "rounded-xl shadow-sm"
+                  } bg-gray-800/70 border border-blue-300/30 overflow-hidden`}
                 >
-                  {/* Column header */}
+                  {/* Column header (Enlarged and enhanced) */}
                   <div
-                    className={`grid grid-cols-2 text-white font-bold bg-gradient-to-r from-blue-700 to-teal-500 ${
-                      is4K ? "text-[2rem]" : "text-xs md:text-sm"
+                    className={`grid grid-cols-2 text-white font-bold bg-gradient-to-r from-blue-600 to-teal-600 ${
+                      is4K ? "text-[3.5vw] p-[2.5vw]" : "text-sm md:text-base p-3 md:p-4"
                     }`}
                   >
-                    <div
-                      className={`${is4K ? "p-6" : "p-2"} flex items-center`}
-                    >
+                    <div className="flex items-center">
                       <FaPills
                         className={`${
-                          is4K ? "mr-3 text-[1.5em]" : "mr-1 text-base"
-                        }`}
+                          is4K ? "mr-[2vw] text-[2.5vw]" : "mr-2 text-lg md:text-xl"
+                        } text-blue-600`}
                       />{" "}
                       Name of Medicine
                     </div>
-                    <div
-                      className={`${is4K ? "p-6" : "p-2"} flex items-center justify-center`}
-                    >
+                    <div className="flex items-center justify-center">
                       <FaBoxes
                         className={`${
-                          is4K ? "mr-3 text-[1.5em]" : "mr-1 text-base"
-                        }`}
+                          is4K ? "mr-[2vw] text-[2.5vw]" : "mr-2 text-lg md:text-xl"
+                        } text-blue-600`}
                       />{" "}
                       Stock
                     </div>
                   </div>
 
                   {/* Items */}
-                  <div className="divide-y divide-gray-100">
+                  <div className="divide-y divide-blue-300/30">
                     {col.map((med, i) => (
                       <div
                         key={i}
-                        className={`grid grid-cols-2 transition-colors even:bg-blue-50 hover:bg-blue-100 ${
-                          is4K ? "text-[2rem]" : "text-xs md:text-sm"
+                        className={`grid grid-cols-2 transition-colors even:bg-gray-700/70 hover:bg-blue-900/50 ${
+                          is4K ? "text-[2.5vw]" : "text-xs md:text-sm"
                         }`}
                       >
                         <div
                           className={`${
-                            is4K ? "p-6 font-semibold" : "p-2 font-medium"
-                          } text-gray-900`}
+                            is4K ? "p-[2vw] font-semibold" : "p-2 font-medium"
+                          } text-gray-200`}
                         >
                           {med.name}
                         </div>
                         <div
-                          className={`${is4K ? "p-6" : "p-2"} text-center font-bold`}
+                          className={`${
+                            is4K ? "p-[2vw]" : "p-2"
+                          } text-center font-bold`}
                         >
                           <span
                             className={`${
                               is4K
-                                ? "px-6 py-3 text-[1.8rem]"
+                                ? "px-[2vw] py-[1vw] text-[2vw]"
                                 : "px-2 py-1 text-[0.7rem] md:text-xs"
                             } rounded-full shadow-sm ${
                               med.stock === "Available"
-                                ? "bg-green-100 text-green-800 border border-green-300"
-                                : "bg-red-100 text-red-800 border border-red-300"
+                                ? "bg-green-600 text-white border border-green-700 shadow-[0_0_8px_rgba(34,197,94,0.3)]"
+                                : "bg-red-600 text-white border border-red-700 shadow-[0_0_8px_rgba(239,68,68,0.3)]"
                             }`}
                           >
                             {med.stock}
@@ -206,16 +201,20 @@ export default function MedicinePage({ currentSlide = 0 }) {
                           <div
                             key={`empty-${idx}`}
                             className={`${
-                              is4K ? "text-[2rem]" : "text-xs md:text-sm"
-                            } grid grid-cols-2 even:bg-blue-50`}
+                              is4K ? "text-[2.5vw]" : "text-xs md:text-sm"
+                            } grid grid-cols-2 even:bg-gray-700/70`}
                           >
                             <div
-                              className={`${is4K ? "p-6" : "p-2"} text-gray-300`}
+                              className={`${
+                                is4K ? "p-[2vw]" : "p-2"
+                              } text-gray-500`}
                             >
                               —
                             </div>
                             <div
-                              className={`${is4K ? "p-6" : "p-2"} text-center text-gray-300`}
+                              className={`${
+                                is4K ? "p-[2vw]" : "p-2"
+                              } text-center text-gray-500`}
                             >
                               —
                             </div>
