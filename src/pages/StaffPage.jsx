@@ -225,7 +225,7 @@ export default function StaffPage() {
                         ? "px-8 py-4 shadow-lg text-[1.8rem]"
                         : "px-3 py-1 shadow-sm text-[0.7rem] md:text-xs"
                     } ${
-                      member.status === "Present"
+                      member.status === "On Duty"
                         ? "bg-green-600 text-white border-green-700 shadow-[0_0_8px_rgba(34,197,94,0.3)]"
                         : "bg-red-600 text-white border-red-700 shadow-[0_0_8px_rgba(239,68,68,0.3)]"
                     } transition-all duration-300`}
