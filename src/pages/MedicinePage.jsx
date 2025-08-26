@@ -117,8 +117,8 @@ export default function MedicinePage({ currentSlide = 0 }) {
                           <span
                             className={`px-10 py-4 rounded-full shadow-sm text-[2rem] border ${
                               med.stock === "Available"
-                                ? "bg-teal-600 text-white border-teal-700 shadow-[0_0_8px_rgba(20,184,166,0.3)]"
-                                : "bg-rose-600 text-white border-rose-700 shadow-[0_0_8px_rgba(225,29,72,0.3)]"
+                                ? "bg-green-600 text-white border-teal-700 shadow-[0_0_8px_rgba(20,184,166,0.3)]"
+                                : "bg-red-600 text-white border-rose-700 shadow-[0_0_8px_rgba(225,29,72,0.3)]"
                             }`}
                           >
                             {med.stock}
@@ -186,7 +186,7 @@ export default function MedicinePage({ currentSlide = 0 }) {
             Last Updated: {new Date().toLocaleDateString()}
           </p>
           <div className="mt-2 text-sm md:text-base text-gray-100 bg-gray-800 px-3 py-1 rounded-lg shadow-md">
-            <span className="font-semibold">Page Navigation:</span> Page {currentSlide + 1} of {slides.length}
+            <span className="font-semibold"></span> Page {currentSlide + 1} of {slides.length}
           </div>
         </div>
 
