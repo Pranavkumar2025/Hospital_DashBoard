@@ -35,11 +35,6 @@ export default function MedicinePage({ currentSlide = 0 }) {
   return is4K ? (
     // ----------- 4K VERSION -----------
     <div className="p-12 min-h-screen flex flex-col items-center bg-gray-900 text-gray-200">
-      {/* Layer 1: Glassmorphism background */}
-      <div
-        className="absolute inset-0 bg-white/20 z-0"
-        style={{ backgroundImage: "radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1), rgba(128, 128, 128, 0.05))" }}
-      />
 
       {/* Layer 2: SVG medical pattern */}
       <svg
@@ -146,11 +141,7 @@ export default function MedicinePage({ currentSlide = 0 }) {
   ) : (
     // ----------- LAPTOP VERSION -----------
     <div className="p-3 md:p-6 lg:p-8 min-h-screen flex flex-col items-center bg-gray-900 text-gray-200">
-      {/* Layer 1: Glassmorphism background */}
-      <div
-        className="absolute inset-0 bg-white/20 z-0"
-        style={{ backgroundImage: "radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1), rgba(128, 128, 128, 0.05))" }}
-      />
+      
 
       {/* Layer 2: SVG medical pattern */}
       <svg
