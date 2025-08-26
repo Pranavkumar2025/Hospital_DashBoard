@@ -31,11 +31,7 @@ export default function StaffPage() {
         is4K ? "p-20" : "p-6 md:p-8 lg:p-12"
       } min-h-screen flex flex-col items-center relative bg-gray-800 text-gray-200`}
     >
-      {/* Layer 1: Glassmorphism background */}
-      <div
-        className="absolute inset-0 bg-white/20 backdrop-blur-md z-0"
-        style={{ backgroundImage: "radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1), rgba(0, 128, 128, 0.05))" }}
-      />
+      
 
       {/* Layer 2: SVG medical pattern */}
       <svg
